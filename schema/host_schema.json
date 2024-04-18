@@ -1,0 +1,189 @@
+{
+    "$id": "http://www.perfsonar.net/host_schema#",
+    "title": "perfSONAR Lookup Service host schema",
+     "type": "object",
+     "properties":{
+        "host_vm":{
+            "description": "is host a VM?",
+            "type": "boolean"
+        },
+        "administrators":{
+            "description": "perfsonar host admin record ids",
+            "type": "array",
+            "items": {
+                "$ref": "/person_schema"
+            }
+        },
+        "hardware_processorcore":{
+            "description": "number of cores",
+            "type": "integer"
+        },
+        "os_kernel":{
+            "description": "OS kernel",
+            "type": "string"
+        },
+        "os_name":{
+            "description": "Host OS name",
+            "type": "string"
+        },
+        "hardware_processorspeed":{
+            "description": "processors speed in Hz",
+            "type": "number"
+        },
+        "os_version":{
+            "description": "OS version",
+            "type": "string"
+        },
+        "productname":{
+            "description": "Host Product Name",
+            "type": "string"
+        },
+        "client_uuid":{
+            "type": "string"
+        },
+        "perfsonar_bundle":{
+            "description": "type of perfsonar installation",
+            "type": "string"
+        },
+        "net_tcp_autotunemaxbuffer_send":{
+            "description": "TCP autotune max buffer in bytes",
+            "type": "number"
+        },
+        "net_tcp_maxbuffer_recv":{
+            "description": "TCP  max buffer in bytes",
+            "type": "number"
+        },
+        "manufacturer":{
+            "description": "Host Manufacturer",
+            "type": "string"
+        },
+        "hardware_cpuid":{
+            "description": "CPU Id",
+            "type": "string"
+        },
+        "hardware_processorcount":{
+            "description": "number of processors",
+            "type": "integer"
+        },
+        "perfsonar_version":{
+            "description": "Bundle version",
+            "type": "string"
+        },
+        "net_tcp_congestionalgorithm":{
+            "description": "TCP congestion control algorithm",
+            "type": "string"
+        },
+        "os_architecture":{
+            "description": "OS architecture",
+            "type": "string"
+        },
+        "name":{
+            "description": "perfsonar host name(s)",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "hostname"
+                },
+                {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                {
+                  "type": "string",
+                  "format": "ipv6"
+                }
+              ]
+            }
+        },
+        "net_tcp_autotunemaxbuffer_recv":{
+            "description": "TCP autotune max buffer in bytes",
+            "type": "number"
+        },
+        "group_domains":{
+            "type": "string"
+        },
+        "hardware_memory":{
+            "description": "memory in bytes",
+            "type": "integer"
+        },
+        "net_tcp_maxbuffer_send":{
+            "description": "TCP max buffer in bytes",
+            "type": "number"
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "state":{
+                "description": "State",
+                "type": "string"
+            },
+            "city":{
+                "description": "City",
+                "type": "string"
+            },
+            "code":{
+                "description": "zipcode",
+                "type": "string"
+            },
+            "country":{
+                "description": "Country",
+                "type": "string"
+            },
+            "latitude":{
+                "description": "latitude",
+                "type": "number"
+            },
+            "longitude":{
+                "description": "longitude",
+                "type": "number"
+            },
+            "sitename":{
+                "type": "string"
+                }
+            }
+        },
+        "group_communities":{
+            "description": "community",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+        },
+        "role":{
+            "description": "Role of this perfsonar host. Regional, science-dmz, etc",
+            "type": "string",
+            "enum": [
+              "nren",
+              "regional",
+              "site-border",
+              "site-internal",
+              "science-dmz",
+              "exchange-point",
+              "test-host",
+              "default-path",
+              "backup-path"
+            ]
+        },
+        "access_policy":{
+            "description": "access policy for the host. In other words, this defines who can run tests to the host",
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "research-education",
+              "limited"
+            ]
+        },
+        "access_notes":{
+            "type": "string"
+        },
+        "pscheduler_service": {
+            "$ref": "/service_schema"
+        },
+        "archive_service": {
+            "$ref": "/service_schema"
+        }
+    }
+}
