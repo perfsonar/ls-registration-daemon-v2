@@ -1,6 +1,6 @@
 {
     "$id": "http://www.perfsonar.net/service_schema#",
-    "title": "perfSONAR Lookup Service Person Schema",
+    "title": "perfSONAR Lookup Service's Service Schema",
     "type": "object",
     "properties": {
         "name": {
@@ -18,20 +18,6 @@
         "version": {
             "description": "Service Version",
             "type": "string"
-        },
-        "pscheduler_tools": {
-            "description": "PScheduler tools installed",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-        },
-        "pscheduler_tests_enabled": {
-            "description": "Pscheduler tests enabled in the host",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
         }
     }
 }

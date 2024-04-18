@@ -1,0 +1,24 @@
+{
+    "$id": "http://www.perfsonar.net/pscheduler_service_schema#",
+    "title": "perfSONAR Lookup Service's Pscheduler Service Schema",
+    "type": "object",
+    "allOf": [
+        {"$ref": "/service_schema"}
+    ],
+    "properties": {
+        "pscheduler_tools": {
+            "description": "PScheduler tools installed",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+        },
+        "pscheduler_tests_enabled": {
+            "description": "Pscheduler tests enabled in the host",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+        }
+    }
+}
