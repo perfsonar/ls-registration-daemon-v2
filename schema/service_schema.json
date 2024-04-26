@@ -1,13 +1,13 @@
 {
-    "$id": "http://www.perfsonar.net/service_schema#",
+    "$id": "https://github.com/perfsonar/ls-registration-daemon-v2/blob/schema/schema/service_schema.json",
     "title": "perfSONAR Lookup Service's Service Schema",
     "type": "object",
     "properties": {
         "name": {
-            "description": "Service Name",
+            "description": "service name",
             "type": "string"
         },
-        "locator": {
+        "locators": {
             "description": "service locator uris",
             "type": "array",
             "items": {
@@ -16,8 +16,10 @@
             }
         },
         "version": {
-            "description": "Service Version",
+            "description": "service version",
             "type": "string"
         }
-    }
+    },
+    "required": ["name", "locators"],
+    "additionalProperties": false
 }

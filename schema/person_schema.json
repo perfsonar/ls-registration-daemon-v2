@@ -1,16 +1,17 @@
 {
-    "$id": "http://www.perfsonar.net/person_schema#",
+    "$id": "https://github.com/perfsonar/ls-registration-daemon-v2/blob/schema/schema/person_schema.json",
     "title": "perfSONAR Lookup Service Person Schema",
     "type": "object",
     "properties": {
-        "email": {
+        "emails": {
             "description": "perfsonar host admin emails",
             "type": "array",
             "items": {
               "type": "string",
               "format": "email"
             }
-        },
-          "required": ["email"]
-    }
+        }
+    },
+    "required": ["emails"],
+    "additionalProperties": false
 }

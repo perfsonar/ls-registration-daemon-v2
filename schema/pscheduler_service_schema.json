@@ -1,24 +1,26 @@
 {
-    "$id": "http://www.perfsonar.net/pscheduler_service_schema#",
+    "$id": "https://github.com/perfsonar/ls-registration-daemon-v2/blob/schema/schema/pscheduler_service_schema.json",
     "title": "perfSONAR Lookup Service's Pscheduler Service Schema",
     "type": "object",
     "allOf": [
-        {"$ref": "/service_schema"}
+        {"$ref": "service_schema.json"}
     ],
     "properties": {
-        "pscheduler_tools": {
-            "description": "PScheduler tools installed",
+        "tools": {
+            "description": "pscheduler tools installed",
             "type": "array",
             "items": {
               "type": "string"
             }
         },
-        "pscheduler_tests_enabled": {
-            "description": "Pscheduler tests enabled in the host",
+        "tests": {
+            "description": "pscheduler tests enabled on the host",
             "type": "array",
             "items": {
               "type": "string"
             }
         }
-    }
+    },
+    "required": ["tools", "tests"],
+    "additionalProperties": false
 }

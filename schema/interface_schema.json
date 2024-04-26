@@ -1,11 +1,11 @@
 {
-    "$id": "http://www.perfsonar.net/interface_schema#",
+    "$id": "https://github.com/perfsonar/ls-registration-daemon-v2/blob/schema/schema/interface_schema.json",
     "title": "perfSONAR Lookup Service Schema",
     "type": "object",
     "properties":{
         "interface_capacity": {
             "type": "integer",
-            "description": "Interface capacity"
+            "description": "interface capacity"
         },
         "interface_name":{
             "type": "string"
@@ -26,23 +26,25 @@
                 ]
               }
         },
-        "pscheduler_tests_enabled": {
-            "description": "Pscheduler tests",
+        "pscheduler_tests": {
+            "description": "pscheduler tests enabled on the interface",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
         "interface_mtu": {
-            "description": "Interface MTU",
+            "description": "interface MTU",
             "type": "number"
         },
         "interface_mac": {
-            "description": "Interface mac address",
+            "description": "interface mac address",
             "type": "string"
         },
         "host":{
-            "$ref": "/host_schema"
+            "$ref": "host_schema.json"
         }
-    }
+    },
+    "required": ["host", "interface_name", "interface_addresses", "pscheduler_tests", "interface_mac"],
+    "additionalProperties": false
 }

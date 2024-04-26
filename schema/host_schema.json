@@ -1,9 +1,9 @@
 {
-    "$id": "http://www.perfsonar.net/host_schema#",
+    "$id": "https://github.com/perfsonar/ls-registration-daemon-v2/blob/schema/schema/host_schema.json",
     "title": "perfSONAR Lookup Service host schema",
      "type": "object",
      "properties":{
-        "host_vm":{
+        "vm":{
             "description": "is host a VM?",
             "type": "boolean"
         },
@@ -11,7 +11,7 @@
             "description": "perfsonar host admin record ids",
             "type": "array",
             "items": {
-                "$ref": "/person_schema"
+                "$ref": "person_schema.json"
             }
         },
         "hardware_processorcore":{
@@ -23,7 +23,7 @@
             "type": "string"
         },
         "os_name":{
-            "description": "Host OS name",
+            "description": "host OS name",
             "type": "string"
         },
         "hardware_processorspeed":{
@@ -35,7 +35,7 @@
             "type": "string"
         },
         "productname":{
-            "description": "Host Product Name",
+            "description": "host product name",
             "type": "string"
         },
         "client_uuid":{
@@ -54,11 +54,11 @@
             "type": "number"
         },
         "manufacturer":{
-            "description": "Host Manufacturer",
+            "description": "host manufacturer",
             "type": "string"
         },
         "hardware_cpuid":{
-            "description": "CPU Id",
+            "description": "CPU id",
             "type": "string"
         },
         "hardware_processorcount":{
@@ -66,7 +66,7 @@
             "type": "integer"
         },
         "perfsonar_version":{
-            "description": "Bundle version",
+            "description": "bundle version",
             "type": "string"
         },
         "net_tcp_congestionalgorithm":{
@@ -120,7 +120,7 @@
                 "type": "string"
             },
             "city":{
-                "description": "City",
+                "description": "city",
                 "type": "string"
             },
             "code":{
@@ -128,7 +128,7 @@
                 "type": "string"
             },
             "country":{
-                "description": "Country",
+                "description": "country",
                 "type": "string"
             },
             "latitude":{
@@ -152,7 +152,7 @@
             }
         },
         "role":{
-            "description": "Role of this perfsonar host. Regional, science-dmz, etc",
+            "description": "role of this perfsonar host - regional, science-dmz, etc",
             "type": "string",
             "enum": [
               "nren",
@@ -180,10 +180,12 @@
             "type": "string"
         },
         "pscheduler_service": {
-            "$ref": "/service_schema"
+            "$ref": "service_schema.json"
         },
         "archive_service": {
-            "$ref": "/service_schema"
+            "$ref": "service_schema.json"
         }
-    }
+    },
+    "required": ["administrators", "client_uuid", "access_policy", "pscheduler_service", "name"],
+    "additionalProperties": false
 }
