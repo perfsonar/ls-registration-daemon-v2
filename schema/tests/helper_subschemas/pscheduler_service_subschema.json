@@ -1,0 +1,61 @@
+{
+    "title": "perfSONAR Lookup Service Pscheduler Service Sub-schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "$definitions": {
+        "service": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "service name",
+                    "type": "string"
+                },
+                "locators": {
+                    "description": "service locator uris",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "version": {
+                    "description": "service version",
+                    "type": "string"
+                },
+                "meta": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "locators"
+            ]
+        }
+    },
+    "properties": {
+        "tools": {
+            "description": "pscheduler tools installed",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tests": {
+            "description": "pscheduler tests enabled on the host",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/$definitions/service"
+        }
+    ],
+    "unevaluatedProperties": false,
+    "required": [
+        "tools",
+        "tests"
+    ]
+}

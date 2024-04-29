@@ -1,0 +1,47 @@
+{
+    "interface_name": "lo",
+    "interface_addresses": [
+        "127.0.0.1"
+    ],
+    "pscheduler_tests": [
+        "throughput"
+    ],
+    "interface_mac": "MM:MM:MM:SS:SS:SS",
+    "host": {
+        "administrators": [
+            {
+                "emails": [
+                    "randomemail@randomdomain.com",
+                    "notrandomemail@notrandomdomain.com"
+                ],
+                "meta": {
+                    "name": "randomPerson"
+                }
+            }
+        ],
+        "client_uuid": "unique_id",
+        "access_policy": "private",
+        "pscheduler_service": {
+            "tools": [
+                "iperf",
+                "nuttcp"
+            ],
+            "tests": [
+                "throughput"
+            ],
+            "name": "pscheduler",
+            "locators": [
+                "https://127.0.0.1/pscheduler"
+            ]
+        },
+        "archive_service": {
+            "name": "archiver",
+            "locators": [
+                "https://127.0.0.1/archiver"
+            ]
+        },
+        "name": [
+            "random.host"
+        ]
+    }
+}
