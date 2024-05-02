@@ -29,13 +29,11 @@
             "tests": [
                 "throughput"
             ],
-            "name": "pscheduler",
             "urls": [
                 "https://127.0.0.1/pscheduler"
             ]
         },
         "archive_service": {
-            "name": "archiver",
             "urls": [
                 "https://127.0.0.1/archiver"
             ]

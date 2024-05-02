@@ -208,10 +208,6 @@
         "service": {
             "type": "object",
             "properties": {
-                "name": {
-                    "description": "service name",
-                    "type": "string"
-                },
                 "urls": {
                     "description": "service locator urls",
                     "type": "array",
@@ -229,7 +225,6 @@
                 }
             },
             "required": [
-                "name",
                 "urls"
             ]
         },
