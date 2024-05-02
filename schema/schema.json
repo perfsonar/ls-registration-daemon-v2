@@ -216,6 +216,10 @@
                         "format": "uri"
                     }
                 },
+                "type": {
+                    "description": "service db type - opensearch, elasticsearch etc.",
+                    "type": "string"
+                },
                 "version": {
                     "description": "service version",
                     "type": "string"
@@ -269,10 +273,6 @@
                 },
                 "write_type": {
                     "description": "write archiver type if different from read archiver",
-                    "type": "string"
-                },
-                "type": {
-                    "description": "archiver type",
                     "type": "string"
                 }
             },
