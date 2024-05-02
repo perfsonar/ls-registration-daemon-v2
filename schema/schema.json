@@ -305,14 +305,14 @@
         }
     },
     "properties": {
-        "interface_capacity": {
+        "capacity": {
             "type": "integer",
             "description": "interface capacity"
         },
-        "interface_name": {
+        "name": {
             "type": "string"
         },
-        "interface_addresses": {
+        "addresses": {
             "description": "interface addresses",
             "type": "array",
             "items": {
@@ -335,11 +335,11 @@
                 "type": "string"
             }
         },
-        "interface_mtu": {
+        "mtu": {
             "description": "interface MTU",
             "type": "number"
         },
-        "interface_mac": {
+        "mac": {
             "description": "interface mac address",
             "type": "string"
         },
@@ -351,10 +351,10 @@
         }
     },
     "required": [
-        "interface_name",
-        "interface_addresses",
+        "name",
+        "addresses",
         "pscheduler_tests",
-        "interface_mac",
+        "mac",
         "host"
     ],
     "unevaluatedProperties": false

@@ -1,12 +1,12 @@
 {
-    "interface_name": "lo",
-    "interface_addresses": [
+    "name": "lo",
+    "addresses": [
         "127.0.0.1"
     ],
     "pscheduler_tests": [
         "throughput"
     ],
-    "interface_mac": "MM:MM:MM:SS:SS:SS",
+    "mac": "MM:MM:MM:SS:SS:SS",
     "host": {
         "administrators": [
             {
