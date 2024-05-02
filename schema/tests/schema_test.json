@@ -30,13 +30,13 @@
                 "throughput"
             ],
             "name": "pscheduler",
-            "locators": [
+            "urls": [
                 "https://127.0.0.1/pscheduler"
             ]
         },
         "archive_service": {
             "name": "archiver",
-            "locators": [
+            "urls": [
                 "https://127.0.0.1/archiver"
             ]
         },

@@ -10,7 +10,7 @@
                     "description": "service name",
                     "type": "string"
                 },
-                "locators": {
+                "urls": {
                     "description": "service locator uris",
                     "type": "array",
                     "items": {
@@ -28,7 +28,7 @@
             },
             "required": [
                 "name",
-                "locators"
+                "urls"
             ]
         }
     },

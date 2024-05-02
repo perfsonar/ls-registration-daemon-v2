@@ -10,7 +10,7 @@
                     "description": "service name",
                     "type": "string"
                 },
-                "locators": {
+                "urls": {
                     "description": "service locator uris",
                     "type": "array",
                     "items": {
@@ -28,7 +28,7 @@
             },
             "required": [
                 "name",
-                "locators"
+                "urls"
             ]
         },
         "pscheduler_service_schema": {
@@ -61,6 +61,20 @@
             ]
         },
         "archive_service_schema": {
+            "type": "object",
+            "properties": {
+                "write_urls": {
+                    "description": "write urls for archive results",
+                    "type": "array",
+                    "items": {
+                        "type": "uri"
+                    }
+                },
+                "type": {
+                    "description": "archiver type",
+                    "type": "string"
+                }
+            },
             "allOf": [
                 {
                     "$ref": "#/$definitions/service"

@@ -17,7 +17,7 @@
                         "$ref": "#/$definitions/person"
                     }
                 },
-                "hardware_processorcore": {
+                "processor_core_count": {
                     "description": "number of cores",
                     "type": "integer"
                 },
@@ -29,7 +29,7 @@
                     "description": "host OS name",
                     "type": "string"
                 },
-                "hardware_processorspeed": {
+                "processor_speed": {
                     "description": "processors speed in Hz",
                     "type": "number"
                 },
@@ -60,11 +60,11 @@
                     "description": "host manufacturer",
                     "type": "string"
                 },
-                "hardware_cpuid": {
+                "processor_id": {
                     "description": "CPU id",
                     "type": "string"
                 },
-                "hardware_processorcount": {
+                "processor_count": {
                     "description": "number of processors",
                     "type": "integer"
                 },
@@ -107,7 +107,7 @@
                 "group_domains": {
                     "type": "string"
                 },
-                "hardware_memory": {
+                "memory_bytes": {
                     "description": "memory in bytes",
                     "type": "integer"
                 },
@@ -212,8 +212,8 @@
                     "description": "service name",
                     "type": "string"
                 },
-                "locators": {
-                    "description": "service locator uris",
+                "urls": {
+                    "description": "service locator urls",
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -230,7 +230,7 @@
             },
             "required": [
                 "name",
-                "locators"
+                "urls"
             ]
         },
         "pscheduler_service_schema": {
@@ -263,6 +263,24 @@
             ]
         },
         "archive_service_schema": {
+            "type": "object",
+            "properties": {
+                "write_urls": {
+                    "description": "write urls for archive results",
+                    "type": "array",
+                    "items": {
+                        "type": "uri"
+                    }
+                },
+                "write_type": {
+                    "description": "write archiver type if different from read archiver",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "archiver type",
+                    "type": "string"
+                }
+            },
             "allOf": [
                 {
                     "$ref": "#/$definitions/service"
