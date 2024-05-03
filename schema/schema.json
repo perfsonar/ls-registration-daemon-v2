@@ -264,7 +264,7 @@
                         "type": "uri"
                     }
                 },
-                "type": {
+                "archiver_type": {
                     "description": "archiver db type - opensearch, elasticsearch etc.",
                     "type": "string"
                 },
