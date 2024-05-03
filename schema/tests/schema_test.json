@@ -36,7 +36,8 @@
         "archive_service": {
             "urls": [
                 "https://127.0.0.1/archiver"
-            ]
+            ],
+            "type": "elasticsearch"
         },
         "name": [
             "random.host"

@@ -273,6 +273,7 @@
                     "type": "string"
                 }
             },
+            "required": ["type"],
             "allOf": [
                 {
                     "$ref": "#/$definitions/service"
