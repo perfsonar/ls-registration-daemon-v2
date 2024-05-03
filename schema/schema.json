@@ -198,10 +198,7 @@
             },
             "unevaluatedProperties": false,
             "required": [
-                "administrators",
                 "client_uuid",
-                "access_policy",
-                "pscheduler_service",
                 "name"
             ]
         },
@@ -215,10 +212,6 @@
                         "type": "string",
                         "format": "uri"
                     }
-                },
-                "type": {
-                    "description": "service db type - opensearch, elasticsearch etc.",
-                    "type": "string"
                 },
                 "version": {
                     "description": "service version",
@@ -270,6 +263,10 @@
                     "items": {
                         "type": "uri"
                     }
+                },
+                "type": {
+                    "description": "archiver db type - opensearch, elasticsearch etc.",
+                    "type": "string"
                 },
                 "write_type": {
                     "description": "write archiver type if different from read archiver",
@@ -351,10 +348,7 @@
         }
     },
     "required": [
-        "name",
         "addresses",
-        "pscheduler_tests",
-        "mac",
         "host"
     ],
     "unevaluatedProperties": false

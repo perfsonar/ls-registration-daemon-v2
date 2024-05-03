@@ -66,7 +66,11 @@
                     }
                 },
                 "type": {
-                    "description": "archiver type",
+                    "description": "archiver db type - opensearch, elasticsearch etc.",
+                    "type": "string"
+                },
+                "write_type": {
+                    "description": "write archiver type if different from read archiver",
                     "type": "string"
                 }
             },
@@ -291,10 +295,7 @@
     },
     "unevaluatedProperties": false,
     "required": [
-        "administrators",
         "client_uuid",
-        "access_policy",
-        "pscheduler_service",
         "name"
     ]
 }
