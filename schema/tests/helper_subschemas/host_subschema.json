@@ -1,0 +1,301 @@
+{
+    "title": "perfSONAR Lookup Service Host Sub-schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "$definitions": {
+        "service": {
+            "type": "object",
+            "properties": {
+                "urls": {
+                    "description": "service locator uris",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "version": {
+                    "description": "service version",
+                    "type": "string"
+                },
+                "meta": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "urls"
+            ]
+        },
+        "pscheduler_service_schema": {
+            "type": "object",
+            "properties": {
+                "tools": {
+                    "description": "pscheduler tools installed",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tests": {
+                    "description": "pscheduler tests enabled on the host",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/$definitions/service"
+                }
+            ],
+            "unevaluatedProperties": false,
+            "required": [
+                "tools",
+                "tests"
+            ]
+        },
+        "archive_service_schema": {
+            "type": "object",
+            "properties": {
+                "write_urls": {
+                    "description": "write urls for archive results",
+                    "type": "array",
+                    "items": {
+                        "type": "uri"
+                    }
+                },
+                "type": {
+                    "description": "archiver db type - opensearch, elasticsearch etc.",
+                    "type": "string"
+                },
+                "write_type": {
+                    "description": "write archiver type if different from read archiver",
+                    "type": "string"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/$definitions/service"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "person": {
+            "type": "object",
+            "properties": {
+                "emails": {
+                    "description": "perfsonar host admin emails",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "email"
+                    }
+                },
+                "meta": {
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "emails"
+            ]
+        }
+    },
+    "properties": {
+        "vm": {
+            "description": "is host a VM?",
+            "type": "boolean"
+        },
+        "administrators": {
+            "description": "perfsonar host admin record ids",
+            "type": "array",
+            "items": {
+                "$ref": "#/$definitions/person"
+            }
+        },
+        "hardware_processorcore": {
+            "description": "number of cores",
+            "type": "integer"
+        },
+        "os_kernel": {
+            "description": "OS kernel",
+            "type": "string"
+        },
+        "os_name": {
+            "description": "host OS name",
+            "type": "string"
+        },
+        "hardware_processorspeed": {
+            "description": "processors speed in Hz",
+            "type": "number"
+        },
+        "os_version": {
+            "description": "OS version",
+            "type": "string"
+        },
+        "productname": {
+            "description": "host product name",
+            "type": "string"
+        },
+        "client_uuid": {
+            "type": "string"
+        },
+        "perfsonar_bundle": {
+            "description": "type of perfsonar installation",
+            "type": "string"
+        },
+        "net_tcp_autotunemaxbuffer_send": {
+            "description": "TCP autotune max buffer in bytes",
+            "type": "number"
+        },
+        "net_tcp_maxbuffer_recv": {
+            "description": "TCP  max buffer in bytes",
+            "type": "number"
+        },
+        "manufacturer": {
+            "description": "host manufacturer",
+            "type": "string"
+        },
+        "hardware_cpuid": {
+            "description": "CPU id",
+            "type": "string"
+        },
+        "hardware_processorcount": {
+            "description": "number of processors",
+            "type": "integer"
+        },
+        "perfsonar_version": {
+            "description": "bundle version",
+            "type": "string"
+        },
+        "net_tcp_congestionalgorithm": {
+            "description": "TCP congestion control algorithm",
+            "type": "string"
+        },
+        "os_architecture": {
+            "description": "OS architecture",
+            "type": "string"
+        },
+        "name": {
+            "description": "perfsonar host name(s)",
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "format": "hostname"
+                    },
+                    {
+                        "type": "string",
+                        "format": "ipv4"
+                    },
+                    {
+                        "type": "string",
+                        "format": "ipv6"
+                    }
+                ]
+            }
+        },
+        "net_tcp_autotunemaxbuffer_recv": {
+            "description": "TCP autotune max buffer in bytes",
+            "type": "number"
+        },
+        "group_domains": {
+            "type": "string"
+        },
+        "hardware_memory": {
+            "description": "memory in bytes",
+            "type": "integer"
+        },
+        "net_tcp_maxbuffer_send": {
+            "description": "TCP max buffer in bytes",
+            "type": "number"
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "state": {
+                    "description": "State",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "city",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "zipcode",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "country",
+                    "type": "string"
+                },
+                "latitude": {
+                    "description": "latitude",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "longitude",
+                    "type": "number"
+                },
+                "sitename": {
+                    "type": "string"
+                }
+            }
+        },
+        "group_communities": {
+            "description": "community",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "role": {
+            "description": "role of this perfsonar host - regional, science-dmz, etc",
+            "type": "string",
+            "enum": [
+                "nren",
+                "regional",
+                "site-border",
+                "site-internal",
+                "science-dmz",
+                "exchange-point",
+                "test-host",
+                "default-path",
+                "backup-path"
+            ]
+        },
+        "access_policy": {
+            "description": "access policy for the host. In other words, this defines who can run tests to the host",
+            "type": "string",
+            "enum": [
+                "public",
+                "private",
+                "research-education",
+                "limited"
+            ]
+        },
+        "access_notes": {
+            "type": "string"
+        },
+        "pscheduler_service": {
+            "allOf": [
+                {
+                    "$ref": "#/$definitions/pscheduler_service_schema"
+                }
+            ]
+        },
+        "archive_service": {
+            "$ref": "#/$definitions/archive_service_schema"
+        },
+        "meta": {
+            "type": "object"
+        }
+    },
+    "unevaluatedProperties": false,
+    "required": [
+        "client_uuid",
+        "name"
+    ]
+}

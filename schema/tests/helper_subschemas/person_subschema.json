@@ -1,0 +1,22 @@
+{
+    "title": "perfSONAR Lookup Service Person Sub-schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "emails": {
+            "description": "perfsonar host admin emails",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "meta": {
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "emails"
+    ]
+}

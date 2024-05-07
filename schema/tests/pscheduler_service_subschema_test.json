@@ -1,0 +1,13 @@
+{
+    "tools": [
+        "iperf",
+        "nuttcp"
+    ],
+    "tests": [
+        "throughput"
+    ],
+    "name": "pscheduler",
+    "locators": [
+        "https://127.0.0.1/pscheduler"
+    ]
+}
